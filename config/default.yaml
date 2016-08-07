@@ -1,0 +1,27 @@
+cloud:
+  versions:
+    - 7
+    - 6
+
+repos_dir: vendor/git
+
+repos:
+  - name: automation
+    url:  https://github.com/SUSE-Cloud/automation.git
+    branch: master
+
+scenarios:
+  ssl_type:
+    - ssl
+    - no-ssl
+    - ssl-insecure
+
+  files:
+    - repo: automation
+      path: scripts/scenarios/cloud@@cloud_version@@/qa/@@ssl_type@@
+
+jobs:
+  prefix: cloud-mkphyscloud-qa-scenario
+  files:
+    - repo: automation
+      path: scripts/jenkins/qa/
