@@ -1,5 +1,4 @@
 require "sinatra/base"
-require 'sinatra/export'
 require "forwardable"
 require "pathname"
 require "yaml"

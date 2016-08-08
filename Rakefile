@@ -9,6 +9,8 @@ task :default => :help
 
 app = Cloudcoverage.app(root: Pathname.new(__dir__))
 
+require "cloudcoverage/assets"
+
 namespace :repos do
   desc "Download all repos"
   task :pull do
@@ -53,3 +55,11 @@ task :run do
   puts system "curl localhost:9292"
   Process.kill(15, pid)
 end
+
+namespace :assets do
+  desc "Compile application assets"
+  task :compile do
+    Cloudcoverage::Assets.precompile
+  end
+end
+

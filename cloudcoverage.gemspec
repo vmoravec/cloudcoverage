@@ -31,7 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_dependency "sinatra", "~> 1.4"
-  spec.add_dependency "sinatra-export", "~> 1.0"
   spec.add_dependency "slim", "~> 3.0"
   spec.add_dependency "sprockets", "~> 3.7"
   spec.add_dependency "sass", "~> 3.4"
